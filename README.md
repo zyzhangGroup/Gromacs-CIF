@@ -5,15 +5,15 @@ Modify Gromcas enabling CIF file supporting
 1. Download Gromacs 2023.1 version in https://manual.gromacs.org/
 2. Replace Gromacs' source files with files in ..\src
 
-   filetypes.h        ..\api\legacy\include\gromacs\fileio\filetypes.h
+   filetypes.h    ——    ..\api\legacy\include\gromacs\fileio\filetypes.h
    
-   pdbio.h            ..\api\legacy\include\gromacs\fileio\fpdbio.h
+   pdbio.h       ——     ..\api\legacy\include\gromacs\fileio\fpdbio.h
    
-   filetypes.cpp      ..\src\gromacs\fileio\filetyoes.cpp
+   filetypes.cpp   ——   ..\src\gromacs\fileio\filetyoes.cpp
    
-   confio.cpp         ..\src\gromacs\fileio\confio.cpp
+   confio.cpp    ——     ..\src\gromacs\fileio\confio.cpp
    
-   pdbio.cpp          ..\src\gromacs\fileio\pdbio.cpp
+   pdbio.cpp     ——     ..\src\gromacs\fileio\pdbio.cpp
    
 4. Follow Gromacs' installation steps
 
