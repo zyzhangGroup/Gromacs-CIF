@@ -19,3 +19,6 @@ Modify Gromacs to support CIF file format
 
 # Usage
 Run "gmx pdb2gmx -f x.cif -o x.gro -p x.top -i x.itp"
+
+# Author
+Hengyue Wang & Zhiyong Zhang
