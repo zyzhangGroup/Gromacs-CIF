@@ -1,5 +1,5 @@
 # Gromacs-CIF
-Modify Gromacs enabling CIF file supporting
+Modify Gromacs to support CIF file format
 
 # Installation
 1. Download Gromacs 2023.1 version in https://manual.gromacs.org/
