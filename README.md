@@ -1,4 +1,4 @@
-# Gromacs-tweak
+# Gromacs-CIF
 Modify Gromacs enabling CIF file supporting
 
 # Installation
