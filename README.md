@@ -7,7 +7,7 @@ Modify Gromacs to support CIF file format
 
    filetypes.h    ——    ..\api\legacy\include\gromacs\fileio\filetypes.h
    
-   pdbio.h       ——     ..\api\legacy\include\gromacs\fileio\fpdbio.h
+   pdbio.h       ——     ..\api\legacy\include\gromacs\fileio\pdbio.h
    
    filetypes.cpp   ——   ..\src\gromacs\fileio\filetyoes.cpp
    
