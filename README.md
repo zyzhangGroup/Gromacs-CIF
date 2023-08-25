@@ -9,7 +9,7 @@ Modify Gromacs to support CIF file format
    
    pdbio.h       ——     ..\api\legacy\include\gromacs\fileio\pdbio.h
    
-   filetypes.cpp   ——   ..\src\gromacs\fileio\filetyoes.cpp
+   filetypes.cpp   ——   ..\src\gromacs\fileio\filetypes.cpp
    
    confio.cpp    ——     ..\src\gromacs\fileio\confio.cpp
    
