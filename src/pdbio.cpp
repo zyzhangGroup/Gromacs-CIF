@@ -720,12 +720,6 @@ read_atom(t_symtab* symtab, const char line[], PdbRecordType type, int natom, t_
     elem[k] = nc;
     trim(elem);
     
-    //hywang for test
-    if (type == PdbRecordType::Hetatm){
-    printf("anr %s\nanm:%s anm_copy:%s\nresnm %s\nchainid %c\nrnr %s resnr %d\nxc %s yc %s zc %s\noccup %s bfac %s elem %s\n", anr, anm, anm_copy, resnm, chainid, rnr, resnr, xc, yc, zc, occup, bfac, elem);
-    }
-    //hywang
-    
     if (atoms->atom)
     {
         atomn = &(atoms->atom[natom]);
@@ -1174,8 +1168,8 @@ int gmx_fprintf_pdb_atomline(FILE*         fp,
     return n;
 }
 
-//hywang
-void get_mmcif_coordnum(FILE* in, int* natoms)
+//Gromacs-CIF
+void get_cif_coordnum(FILE* in, int* natoms)
 {
 
     const int MMCIF_STRLEN = 150;
@@ -1201,7 +1195,7 @@ void get_mmcif_coordnum(FILE* in, int* natoms)
 }
 
 static int
-read_atom_mmcif(t_symtab* symtab, const char line[], int natom, t_atoms* atoms, rvec x[], int *chainnum, int pdbtype_n, int anr_n, int anm_n, int resnm_n, int rnr_n, int elem_n, int xc_n, int yc_n, int zc_n, int occup_n, int bfac_n, int chainid_n)
+read_atom_cif(t_symtab* symtab, const char line[], int natom, t_atoms* atoms, rvec x[], int *chainnum, int pdbtype_n, int anr_n, int anm_n, int resnm_n, int rnr_n, int elem_n, int xc_n, int yc_n, int zc_n, int occup_n, int bfac_n, int chainid_n)
 {
 
     const int MAX_SIZE = 20;
@@ -1343,7 +1337,7 @@ read_atom_mmcif(t_symtab* symtab, const char line[], int natom, t_atoms* atoms, 
     return natom;
 }
 
-int read_mmciffile(FILE*      in,
+int read_ciffile(FILE*      in,
                  char*      title,
                  int*       model_nr,
                  t_atoms*   atoms,
@@ -1433,7 +1427,7 @@ int read_mmciffile(FILE*      in,
                     }
                 }
                 else{
-                    natom = read_atom_mmcif(symtab, line, natom, atoms, x, &chainnum, pdbtype_n, anr_n, anm_n, resnm_n, rnr_n, elem_n, xc_n, yc_n, zc_n, occup_n, bfac_n, chainid_n);
+                    natom = read_atom_cif(symtab, line, natom, atoms, x, &chainnum, pdbtype_n, anr_n, anm_n, resnm_n, rnr_n, elem_n, xc_n, yc_n, zc_n, occup_n, bfac_n, chainid_n);
                 }
                 fgets2(line, MMCIF_STRLEN, in);
                 std::string line_string(line);
@@ -1445,7 +1439,7 @@ int read_mmciffile(FILE*      in,
     return natom;
 }
 
-void gmx_mmcif_read_conf(const std::filesystem::path& infile,
+void gmx_cif_read_conf(const std::filesystem::path& infile,
                        t_symtab*                    symtab,
                        char**                       name,
                        t_atoms*                     atoms,
@@ -1455,11 +1449,11 @@ void gmx_mmcif_read_conf(const std::filesystem::path& infile,
 {
     FILE* in = gmx_fio_fopen(infile, "r");
     char  title[STRLEN];
-    read_mmciffile(in, title, nullptr, atoms, symtab, x, pbcType, box, nullptr);
+    read_ciffile(in, title, nullptr, atoms, symtab, x, pbcType, box, nullptr);
     if (name != nullptr)
     {
         *name = gmx_strdup(title);
     }
     gmx_fio_fclose(in);
 }
-//hywang
+//Gromacs-CIF
