@@ -237,7 +237,7 @@ static void get_stx_coordnum(const std::filesystem::path& infile, int* natoms)
            //Gromacs-CIF
         case efCIF:
             in = gmx_fio_fopen(infile, "r");
-            get_mmcif_coordnum(in, natoms);
+            get_cif_coordnum(in, natoms);
             gmx_fio_fclose(in);
             break;
             //Gromacs-CIF
@@ -390,7 +390,7 @@ static void read_stx_conf(const std::filesystem::path& infile,
         case efBRK:
         case efENT: gmx_pdb_read_conf(infile, symtab, name, atoms, x, pbcType, box); break;
         //Gromacs-CIF
-        case efCIF: gmx_mmcif_read_conf(infile, symtab, name, atoms, x, pbcType, box); break;
+        case efCIF: gmx_cif_read_conf(infile, symtab, name, atoms, x, pbcType, box); break;
         //Gromacs-CIF
         case efESP: gmx_espresso_read_conf(infile, symtab, name, atoms, x, v, box); break;
         default: gmx_incons("Not supported in read_stx_conf");
