@@ -68,13 +68,13 @@ static const int trns[] = { efTRR, efCPT, efTNG };
 static const int stos[] = { efGRO, efG96, efPDB, efBRK, efENT, efESP };
 #define NSTOS asize(stos)
 
-//hywang
+//Gromacs-CIF
 //static const int stxs[] = { efGRO, efG96, efPDB, efBRK, efENT, efESP, efTPR };
 //#define NSTXS asize(stxs)
 
 static const int stxs[] = { efGRO, efG96, efPDB, efBRK, efENT, efESP, efTPR, efCIF };
 #define NSTXS asize(stxs)
-//hywang
+//Gromacs-CIF
 
 static const int tpss[] = { efTPR, efGRO, efG96, efPDB, efBRK, efENT };
 #define NTPSS asize(tpss)
@@ -148,9 +148,9 @@ static const t_deffile deffile[efNR] = {
     { eftASC, "", "rundir", nullptr, "Run directory" },
     { eftASC, ".csv", "bench", nullptr, "CSV data file" },
     { eftASC, ".inp", "topol-qmmm", nullptr, "Input file for QM program" },
-    //hywang
+    //Gromacs-CIF
     { eftASC, ".cif", "eiwit", "-f", "CIF file" }
-    //hywang
+    //Gromacs-CIF
 };
 
 const char* ftp2ext(int ftp)
