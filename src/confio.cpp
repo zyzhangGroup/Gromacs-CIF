@@ -234,13 +234,13 @@ static void get_stx_coordnum(const std::filesystem::path& infile, int* natoms)
             get_pdb_coordnum(in, natoms);
             gmx_fio_fclose(in);
             break;
-           //hywang
+           //Gromacs-CIF
         case efCIF:
             in = gmx_fio_fopen(infile, "r");
             get_mmcif_coordnum(in, natoms);
             gmx_fio_fclose(in);
             break;
-            //hywang
+            //Gromacs-CIF
         case efESP: *natoms = get_espresso_coordnum(infile); break;
         default: gmx_fatal(FARGS, "File type %s not supported in get_stx_coordnum", ftp2ext(ftp));
     }
@@ -389,9 +389,9 @@ static void read_stx_conf(const std::filesystem::path& infile,
         case efPDB:
         case efBRK:
         case efENT: gmx_pdb_read_conf(infile, symtab, name, atoms, x, pbcType, box); break;
-        //hywang
+        //Gromacs-CIF
         case efCIF: gmx_mmcif_read_conf(infile, symtab, name, atoms, x, pbcType, box); break;
-        //hywang
+        //Gromacs-CIF
         case efESP: gmx_espresso_read_conf(infile, symtab, name, atoms, x, v, box); break;
         default: gmx_incons("Not supported in read_stx_conf");
     }
@@ -432,9 +432,9 @@ void readConfAndAtoms(const std::filesystem::path& infile,
 
     //init_t_atoms(atoms, natoms, (fn2ftp(infile) == efPDB));
     
-    //hywang
+    //Gromacs-CIF
     init_t_atoms(atoms, natoms, (fn2ftp(infile) == efPDB || fn2ftp(infile) == efCIF));
-    //hywang
+    //Gromacs-CIF
 
     bool xIsNull = false;
     if (x == nullptr)
