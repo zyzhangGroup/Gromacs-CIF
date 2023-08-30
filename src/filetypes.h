@@ -85,9 +85,9 @@ enum GromacsFileType
     efRND,
     efCSV,
     efQMI,
-    //hywang
+    //Gromacs-CIF
     efCIF,
-    //hywang
+    //Gromacs-CIF
     efNR
 };
 
