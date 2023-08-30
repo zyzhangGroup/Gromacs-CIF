@@ -187,10 +187,10 @@ gmx_conect gmx_conect_init();
 void gmx_conect_done(gmx_conect gc);
 /* Free memory */
 
-//hywang
-void get_mmcif_coordnum(FILE* in, int* natoms);
+//Gromacs-CIF
+void get_cif_coordnum(FILE* in, int* natoms);
 
-int read_mmciffile(FILE*      in,
+int read_ciffile(FILE*      in,
                  char*      title,
                  int*       model_nr,
                  t_atoms*   atoms,
@@ -200,13 +200,13 @@ int read_mmciffile(FILE*      in,
                  matrix     box,
                  gmx_conect conect);
 
-void gmx_mmcif_read_conf(const std::filesystem::path& infile,
+void gmx_cif_read_conf(const std::filesystem::path& infile,
                        t_symtab*                    symtab,
                        char**                       name,
                        t_atoms*                     atoms,
                        rvec                         x[],
                        PbcType*                     pbcType,
                        matrix                       box);
-//hywang
+//Gromacs-CIF
 
 #endif /* GMX_FILEIO_PDBIO_H */
