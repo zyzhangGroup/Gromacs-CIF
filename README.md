@@ -24,7 +24,7 @@ Run "gmx pdb2gmx -f x.cif -o x.gro -p x.top -i x.itp"
 All modified parts in source files are surrounded with "//Gromacs-CIF"
 
 # Citation
-DOI:
+DOI: https://doi.org/10.1101/2023.09.01.555884
 
 # Author
 Hengyue Wang & Zhiyong Zhang
