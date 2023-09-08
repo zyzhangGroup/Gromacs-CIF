@@ -15,7 +15,7 @@ In the Protein Data Bank (PDB), the PDB format stands as the major file format f
    
    pdbio.cpp     ——     ..\src\gromacs\fileio\pdbio.cpp
    
-4. Follow Gromacs' installation steps
+3. Follow Gromacs' installation steps
 
 # Usage
 Run "gmx pdb2gmx -f x.cif -o x.gro -p x.top -i x.itp"
